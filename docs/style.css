@@ -3,7 +3,7 @@
   --secondary-color: #ea9e8a;
   --card-bg-color: #eed7c8;
   --card-border-radius: 40px;
-  --card-inset-shadow: inset 4px -4px 4px 0px #5b2e1054;
+  --card-inset-shadow: inset 4px -4px 4px 0px rgba(91, 46, 16, 0.329);
   --card-inset-highlight: inset -4px 4px 4px 0px rgba(255, 255, 255, 0.2);
   --card-inset-keylight: inset 1px 0px 1px 0px rgba(255, 255, 255, .2);
   --card-drop-shadow: -20px 12px 20px rgba(0, 0, 0, 0.3);
@@ -35,8 +35,8 @@
 body, html {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
 }
 
 body {
@@ -311,6 +311,20 @@ input[type=range]::-webkit-slider-thumb {
   position: relative;
 }
 
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 24px;
+  height: 24px;
+  margin: 5px 0;
+  background: var(--secondary-color);
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: var(--button-box-shadow);
+  position: relative;
+}
+
 #wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -320,4 +334,7 @@ input[type=range]::-webkit-slider-thumb {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 12px;
+  margin: 50px auto;
+  width: 100%;
+  max-width: 450px;
 }

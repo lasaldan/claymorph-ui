@@ -5,7 +5,7 @@ $primary-color: #96bdbb
   --secondary-color: #ea9e8a
   --card-bg-color: #eed7c8
   --card-border-radius: 40px
-  --card-inset-shadow: inset 4px -4px 4px 0px #5b2e1054
+  --card-inset-shadow: inset 4px -4px 4px 0px rgba(91, 46, 16, 0.329)
   --card-inset-highlight: inset -4px 4px 4px 0px rgba(255, 255, 255, 0.2)
   --card-inset-keylight: inset 1px 0px 1px 0px rgba(255, 255, 255, .2)
   --card-drop-shadow: -20px 12px 20px rgba(0, 0, 0, 0.3)
@@ -40,8 +40,8 @@ $primary-color: #96bdbb
 body, html 
   margin: 0
   padding: 0
-  width: 100vw
-  height: 100vh
+  width: 100%
+  min-height: 100vh
 
 body 
   display: flex
@@ -50,7 +50,6 @@ body
   background-image: url('bg.jpg')
   background-size: cover
   background-position: center
-
   font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif
   font-weight: normal
   color: #f2a684
@@ -231,26 +230,22 @@ input[type="range"]::-webkit-slider-thumb
   position: relative
 
 
-// input[type="range"]::-moz-range-thumb
-//   -webkit-appearance: none
-//   appearance: none
-//   width: 16px
-//   height: 16px
-//   background: blue
-//   border: 2px solid red
-//   border-radius: 50%
-//   cursor: pointer
-// input[type="range"]::-ms-thumb
-//   -webkit-appearance: none
-//   appearance: none
-//   width: 16px
-//   height: 16px
-//   background: blue
-//   border: 2px solid red
-//   border-radius: 50%
-//   cursor: pointer
+input[type="range"]::-moz-range-thumb
+  -webkit-appearance: none
+  appearance: none
+  width: 24px
+  height: 24px
+  margin: 5px 0
+  background: var(--secondary-color)
+  border-radius: 100px
+  cursor: pointer
+  box-shadow: var(--button-box-shadow)
+  position: relative
 
 #wrapper 
   display: flex
   flex-direction: column
   gap: 12px
+  margin: 50px auto
+  width: 100%
+  max-width: 450px
